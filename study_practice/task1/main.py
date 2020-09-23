@@ -1,60 +1,23 @@
-import math
+def check_lucky_ticket():
+  amount = 0
+  for a in range(10**n):
+    a = list(str(a).zfill(n))
+           
+    a1 = [int(i) for i in a[:len(a)//2]]
+    a2 = [int(i) for i in a[len(a)//2:]]
+    if sum(a1) == sum(a2):
+      amount += 1 
+  print('The amount of lucky tickets', amount)
 
-def line():
-  print('===================')
+while True:
+    try:
+      n = int(input('Enter n: '))
+      if n%2 != 0:
+        print('Number must be odd!')
+        continue
+      break
+    except:
+        print('Your number from 2 to 100 must be odd!')
 
-def sum_of_elements(arr, n): 
-    sumfirst = 0; 
-    sumsecond = 0; 
-  
-    for i in range(n): 
-        # add elements in first half sum 
-        if (i < n // 2): 
-            sumfirst += arr[i]; 
-        # add elements in the second half sum 
-        else: 
-            sumsecond += arr[i]; 
+check_lucky_ticket()
 
-    line()          
-    if sumfirst == sumsecond:
-      print("Lucky ticket")
-    else:
-      print("Not lucky. Try enter again")
-
-    # print("Sum of first half elements is",  
-    #                 sumfirst, end = "\n"); 
-    # print("Sum of second half elements is",  
-    #                 sumsecond, end = "\n"); 
-    # print("Sum =", sumfirst + sumsecond)  
-    
-num = int(input('Enter pair amount of digits: '))
-
-# printing number  
-arr = [int(x) for x in str(num)] 
-  
-n = len(arr); 
-
-sum_of_elements(arr, n); 
-
-
-
-
-
-
-
-
-
-
-
-# if (int(math.log10(n))+1)%2 == 0:
-#   print(int(math.log10(n))+1)
-# suma = 0
-# # print(n // 10, '= n // 10')
-# # print(n % 10, '= n % 10')
-# while n > 0:
-#     digit = n % 10
-#     suma = suma + digit
-#     n = n // 10
-    
-
-# print("Сумма:", suma)
